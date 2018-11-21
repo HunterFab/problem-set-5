@@ -25,11 +25,13 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
-
+  var div = document.getElementById("mario-easy-output")
   do {
     input = prompt("Enter a height for the Mario-styled pyramid.")
   } while (input<0 && input>23);
-
+  Math.floor(input) = input;
+  let x = "#"
+  div.innerHTML = x^input
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
