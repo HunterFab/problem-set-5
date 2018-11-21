@@ -14,7 +14,7 @@ To get started, you'll need to create a [GitHub](https://github.com/) repository
 ```
 git clone git@github.com:rwilson-ucvts/principles-pset-5-skeleton.git
 ```
-04. The cloning process will have created a folder named `principles-pset-5-skeleton`. Rename this folder to `pset4`.
+04. The cloning process will have created a folder named `principles-pset-5-skeleton`. Rename this folder to `pset5`.
 ```
 mv principles-pset-5-skeleton pset5
 ```

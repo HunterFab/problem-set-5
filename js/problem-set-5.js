@@ -26,7 +26,9 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 1 CODE HERE
+  do {
+    input = prompt("Enter a height for the Mario-styled pyramid.")
+  } while (input<0 && input>23);
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
