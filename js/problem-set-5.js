@@ -19,19 +19,29 @@
  *
  * All output should be displayed on the page, not printed to the console.
  */
+ function mario() {
 
-function mario() {
+   ////////////// DO NOT MODIFY
+   let height; // DO NOT MODIFY
+   ////////////// DO NOT MODIFY
+   var div = document.getElementById("mario-easy-output")
+   do {
+     height = prompt("Enter a height for the Mario-styled pyramid.")
+   } while (height<1 || height>23);
 
-  ////////////// DO NOT MODIFY
-  let height; // DO NOT MODIFY
-  ////////////// DO NOT MODIFY
-  var div = document.getElementById("mario-easy-output")
-  do {
-    input = prompt("Enter a height for the Mario-styled pyramid.")
-  } while (input<0 && input>23);
-  Math.floor(input) = input;
-  let x = "#"
-  div.innerHTML = x^input
+   for (i = 0 ; i < height ; i++)
+   {
+     let space
+     for (space = height + i; space >= 0 ; space--)
+        div.innerHTML = div.innerHTML + " "
+        if (space = 1) {
+          div.innerHTML = div.innerHTML + "<br>"
+        }
+      let hash
+      for (hash = 1 + i; hash <= height; hash++)
+        div.innerHTML = div.innerHTML + "#"
+   }
+
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
