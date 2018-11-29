@@ -166,22 +166,20 @@ function credit() {
 
 function guess() {
 
-  var div = document.getElementById("guess-output")
-  var number = Math.floor(Math.abs(Math.random()) * 1000)
-  var guess = prompt("Guess the number between 1 and 1000.")
-  let guessTotal
-  while (true)
-  {
-    if (guess == number)
-    {
-      guesstotal = guesstotal + 1
-      div.InnerHTML = `You're correct! You guessed the number in ${guessTotal} tries.`
+  var div = document.getElementById("guess-output");
+  var number = Math.floor(Math.abs(Math.random()) * 1000);
+  var guess = prompt("Guess the number between 1 and 1000.");
+  let guessTotal;
+  while (true) {
+    if (guess == number) {
+      guessTotal = guessTotal + 1
+      div.InnerHTML = `You're correct! You guessed the number in ${guessTotal} tries.`;
       break;
     }
     else {
-      guesstotal = guesstotal + 1
-      `You're incorrect. Guess again.`
-      var guess = prompt("Guess the number between 1 and 1000.")
+      guessTotal = guessTotal + 1;
+      div.innerHTML = `You're incorrect. Guess again.`;
+      var guess = prompt("Guess the number between 1 and 1000.");
     }
   }
 
