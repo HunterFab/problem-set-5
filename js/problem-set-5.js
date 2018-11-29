@@ -128,7 +128,6 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 3 CODE HERE
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
@@ -167,6 +166,25 @@ function credit() {
 
 function guess() {
 
+  var div = document.getElementById("guess-output")
+  var number = Math.floor(Math.abs(Math.random()) * 1000)
+  var guess = prompt("Guess the number between 1 and 1000.")
+  let guessTotal
+  while (true)
+  {
+    if (guess == number)
+    {
+      guesstotal = guesstotal + 1
+      div.InnerHTML = `You're correct! You guessed the number in ${guessTotal} tries.`
+      break;
+    }
+    else {
+      guesstotal = guesstotal + 1
+      `You're incorrect. Guess again.`
+      var guess = prompt("Guess the number between 1 and 1000.")
+    }
+  }
+
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
@@ -201,6 +219,35 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+/*
+  var div = document.getElementById("hurricane-output")
+  do {
+    windspeed = prompt("Enter a hurricane windspeed.")
+  } while (windspeed<0);
+  if (windspeed>=157)
+  {
+    div.innerHTML = "Category 5";
+  }
+  else if (windspeed>130 && windspeed<157)
+  {
+    div.innerHTML = "Category 4";
+  }
+  else if (windspeed>111 && windspeed<130)
+  {
+    div.innerHTML = "Category 3";
+  }
+  else if (windspeed>96 && windspeed<111)
+  {
+    div.innerHTML = "Category 2";
+  }
+  else if (windspeed>74 && windspeed<96)
+  {
+    div.innerHTML = "Category 1";
+  }
+  else if (windspeed>34 && windspeed<74)
+  {
+    div.innerHTML = "Tropical Storm";
+  };
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
@@ -231,6 +278,14 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
+/*
+  var div = document.getElementById("gymastics-output")
+  let a = prompt("Enter a gymnastics score.")
+  let b = prompt("Enter a gymnastics score.")
+  let c = prompt("Enter a gymnastics score.")
+  let d = prompt("Enter a gymnastics score.")
+  let e = prompt("Enter a gymnastics score.")
+  let f = prompt("Enter a gymnastics score.")
 
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
@@ -278,6 +333,12 @@ function reportCard() {
   let quizTotal = 0; ////// DO NOT MODIFY
   let homeworkTotal = 0; // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
+/*
+  var div = document.getElementById("report-card-output")
+  if (quizTotal!=-1)
+  do {
+    quizTotal = quizTotal + prompt("Enter the marking period quiz scores.")
+  } while
 
   /*
    * NOTE: The 'testTotal', 'quizTotal', and 'homeworkTotal' variables
