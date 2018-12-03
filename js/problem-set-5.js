@@ -238,14 +238,37 @@
  * All output should be displayed on the page, not printed to the console.
  */
 
-function guess() {
+ function guess() {
 
-  // WRITE YOUR EXERCISE 4 CODE HERE
+   // WRITE YOUR EXERCISE 4 CODE HERE
+   let number = Math.floor(Math.random()*999) + 1;
+   let attempt = 0;
+   let correct = false;
+   while (correct == false) {
+     guess = prompt('enter your guess')
+     if(guess >= 1 && guess <= 1000 && Number.isInteger(Number(guess))){
+       console.log(1);
+       if (number == guess){
+         attempt++;
+         correct = true;
+         alert("Correct Answer!")
+         document.getElementById('guess-output').innerHTML="Number: " + number + "</br>" + "Attempts: " + attempt;
+       }
+       else if(guess>number){
+         attempt++;
+         alert('too high')
+       }
+       else if(guess<number){
+         attempt++;
+         alert('too low')
+       }
+     }
+   }
 
-  ////////////////// DO NOT MODIFY
-  check('guess'); // DO NOT MODIFY
-  ////////////////// DO NOT MODIFY
-}
+   ////////////////// DO NOT MODIFY
+   check('guess'); // DO NOT MODIFY
+   ////////////////// DO NOT MODIFY
+ }
 
 /*
  * Hurricane. 5 points.
