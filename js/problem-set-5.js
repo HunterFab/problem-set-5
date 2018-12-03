@@ -409,40 +409,74 @@ function hurricane() {
  * All output should be displayed on the page, not printed to the console.
  */
 
-function reportCard() {
+ function reportCard() {
 
-  ///////////////////////// DO NOT MODIFY
-  let testTotal  =  0; ////// DO NOT MODIFY
-  let quizTotal  =  0; ////// DO NOT MODIFY
-  let homeworkTotal  =  0; // DO NOT MODIFY
-  ///////////////////////// DO NOT MODIFY
+   ///////////////////////// DO NOT MODIFY
+   let testTotal = 0; ////// DO NOT MODIFY
+   let quizTotal = 0; ////// DO NOT MODIFY
+   let homeworkTotal = 0; // DO NOT MODIFY
+   ///////////////////////// DO NOT MODIFY
+   /*
+    * NOTE: The 'testTotal', 'quizTotal', and 'homeworkTotal' variables
+    *       should be representative of the sum of the test scores, quiz
+    *       scores, and homework scores the user enters, respectively.
+    */
 
-  /*
-   * NOTE: The 'testTotal', 'quizTotal', and 'homeworkTotal' variables
-   *       should be representative of the sum of the test scores, quiz
-   *       scores, and homework scores the user enters, respectively.
-   */
+   ///////////////////// DO NOT MODIFY
+   let tests = 0; ////// DO NOT MODIFY
+   let quizzes = 0; //// DO NOT MODIFY
+   let homeworks = 0; // DO NOT MODIFY
+   ///////////////////// DO NOT MODIFY
 
-  ///////////////////// DO NOT MODIFY
-  let tests  =  0; ////// DO NOT MODIFY
-  let quizzes  =  0; //// DO NOT MODIFY
-  let homeworks  =  0; // DO NOT MODIFY
-  ///////////////////// DO NOT MODIFY
+   /*
+    * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
+    *       representative of the number of tests, quizzes, and homework
+    *       grades the user enters, respectively.
+    */
+ 	while (true){
+ 		let testsInput=prompt("Enter your test score");
+ 		if(testsInput==-1){
+ 			break;
+ 		}
+ 		if(Number(testsInput)>=0 && Number(testsInput<=100)){
+ 			testTotal=Number(testsInput)+testTotal;
+ 			tests++;
+ 		}
 
-  /*
-   * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
-   *       representative of the number of tests, quizzes, and homework
-   *       grades the user enters, respectively.
-   */
-
-  /////////////////////// DO NOT MODIFY
-  check('report-card', // DO NOT MODIFY
-    testTotal, ////////// DO NOT MODIFY
-    tests, ////////////// DO NOT MODIFY
-    quizTotal, ////////// DO NOT MODIFY
-    quizzes, //////////// DO NOT MODIFY
-    homeworkTotal, ////// DO NOT MODIFY
-    homeworks /////////// DO NOT MODIFY
-  ); //////////////////// DO NOT MODIFY
-  /////////////////////// DO NOT MODIFY
-}
+ 	}
+ 	while(true){
+ 		let quizInput=prompt("Enter your quiz score");
+ 		if (quizInput==-1){
+ 			break;
+ 		}
+ 		if(Number(quizInput)>=0 && Number(quizInput)<=100){
+ 			quizTotal=Number(quizInput)+quizTotal;
+ 			quizzes++;
+ 		}
+ 	}
+ 	while(true){
+ 		let homeworkInput=prompt("Enter your homework score");
+ 		if (homeworkInput==-1){
+ 			break;
+ 		}
+ 		if(Number(homeworkInput)>=0 && Number(homeworkInput)<=100){
+ 			homeworkTotal=Number(homeworkInput)+homeworkTotal;
+ 			homeworks++;
+ 		}
+ 	}
+ 	let testAverage=(testTotal/tests).toFixed(2);
+ 	let quizAverage=(quizTotal/quizzes).toFixed(2);
+ 	let homeworksAverage=(homeworkTotal/homeworks).toFixed(2);
+ 	grade=(.6*testAverage+.3*quizAverage+.1*homeworksAverage).toFixed(2);
+ 	document.getElementById("report-card-output").innerHTML="Tests: "+testAverage+"</br>Quizzes: "+quizAverage+"</br>Homework: "+homeworksAverage+"</br>Grade: "+grade;
+   /////////////////////// DO NOT MODIFY
+   check('report-card', // DO NOT MODIFY
+     testTotal, ////////// DO NOT MODIFY
+     tests, ////////////// DO NOT MODIFY
+     quizTotal, ////////// DO NOT MODIFY
+     quizzes, //////////// DO NOT MODIFY
+     homeworkTotal, ////// DO NOT MODIFY
+     homeworks /////////// DO NOT MODIFY
+   ); //////////////////// DO NOT MODIFY
+   /////////////////////// DO NOT MODIFY
+ }
