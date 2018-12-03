@@ -323,30 +323,47 @@ function hurricane() {
  * All output should be displayed on the page, not printed to the console.
  */
 
-function gymnastics() {
+ function gymnastics() {
 
-  /////////////////// DO NOT MODIFY
-  let total  =  0; //// DO NOT MODIFY
-  let scores  =  []; // DO NOT MODIFY
-  /////////////////// DO NOT MODIFY
+   /////////////////// DO NOT MODIFY
+   let total = 0; //// DO NOT MODIFY
+   let scores = []; // DO NOT MODIFY
+   /////////////////// DO NOT MODIFY
 
-  /*
-   * NOTE: The 'total' variable should be representative of the sum of all
-   *       six of the judges' scores.
-   */
+   /*
+    * NOTE: The 'total' variable should be representative of the sum of all
+    *       six of the judges' scores.
+    */
 
-  /*
-   * NOTE: You need to add each score (valid or not) to the 'scores' variable.
-   *       To do this, use the following syntax:
-   *
-   *       scores.push(firstScore);   // your variable names for your scores
-   *       scores.push(secondScore);  // will likely be different than mine
-   */
+   /*
+    * NOTE: You need to add each score (valid or not) to the 'scores' variable.
+    *       To do this, use the following syntax:
+    *
+    *       scores.push(firstScore);   // your variable names for your scores
+    *       scores.push(secondScore);  // will likely be different than mine
+    */
+ 	let i = 1;
+ 	while(i <= 6){
+ 		let pScore = Number(prompt("Enter your score"));
+ 		if (pScore >= 1 && pScore <= 10 && Number.isInteger(pScore)){
+ 			scores.push(pScore);
+ 		i++;
+ 		}
+ 	}
+ 	scores.sort(function(a,b){return a-b;})
+ 	let max = scores[5];
+ 	let min = scores[0];
+ 	let rScores = [];
+ 	for(let j = 1; j < 5; j++){
+ 		rScores.push(scores[j]);
+ 	}
+ 	let aScore = ((rScores[0] + rScores[1] + rScores[2] + rScores[3])/4).toFixed(2);
+ 	document.getElementById("gymnastics-output").innerHTML = "Discarded: " + min + ", " + max + "</br>Score: " + aScore;
 
-  /////////////////////////////// DO NOT MODIFY
-  check('gymnastics', scores); // DO NOT MODIFY
-  /////////////////////////////// DO NOT MODIFY
-}
+   /////////////////////////////// DO NOT MODIFY
+   check('gymnastics', scores); // DO NOT MODIFY
+   /////////////////////////////// DO NOT MODIFY
+ }
 
 /*
  * Report Card. 5 points.
