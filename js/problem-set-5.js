@@ -2,7 +2,7 @@
  * Mario. 10 points.
  *
  * Write a function that prompts the user for a height, and prints a
- * Mario-style half-pyramid of that height
+ * Mario-style half-pyramid of that height.
  *
  *     ##
  *    ###
@@ -19,33 +19,47 @@
  *
  * All output should be displayed on the page, not printed to the console.
  */
+
  function mario() {
 
    ////////////// DO NOT MODIFY
    let height; // DO NOT MODIFY
    ////////////// DO NOT MODIFY
 
-   var div = document.getElementById("mario-easy-output")
-   do {
-     height = prompt("Enter a height for the Mario-styled pyramid.")
-   } while (height<1 || height>23);
 
-      for (i = 0 ; i <= height ; i++)
-      {
-          let space;
-          for (space = 1 + i; space >= 0 ; space--)
-           div.innerHTML = div.innerHTML + " "
-           if (space = 1) {
-             div.innerHTML = div.innerHTML + "<br>"
-           }
-         let hash
-         for (hash = 0; hash <= i + 1; hash++)
-           div.innerHTML = div.innerHTML + "#"
-      }
-  ////////////////////////// DO NOT MODIFY
-  check('mario', height); // DO NOT MODIFY
-  ////////////////////////// DO NOT MODIFY
-}
+
+
+   // WRITE YOUR EXERCISE 1 CODE HERE
+   while (true){
+     height = prompt("Please enter a valid height");
+     height = Number(height);
+     if(height >= 1 && height <= 23 && Number.isInteger(height)){
+       break;
+     };
+   };
+   let i = 1;
+   let hash = '#';
+   let lines = "<code>";
+   let spaces = height-2;
+
+   while (i <= height){
+     let a = '';
+     for(let j = 0; j <= spaces; j++) {
+       a += '&nbsp;';
+     }
+     spaces--;
+     hash = hash + '#';
+     lines = lines + a + hash + "</br>";
+     i++;
+   }
+   document.getElementById("mario-easy-output").innerHTML = lines;
+   lines = lines + "</code>"
+   //document.GetById("mario-easy").innerHTML();
+   ////////////////////////// DO NOT MODIFY
+   check('mario', height); // DO NOT MODIFY
+   ////////////////////////// DO NOT MODIFY
+ }
+
 
 /*
  * Mario, Again. 10 points.
@@ -69,18 +83,41 @@
  * All output should be displayed on the page, not printed to the console.
  */
 
-function marioAgain() {
+ function marioAgain() {
 
-  ////////////// DO NOT MODIFY
-  let height; // DO NOT MODIFY
-  ////////////// DO NOT MODIFY
+   ////////////// DO NOT MODIFY
+   let height; // DO NOT MODIFY
+   ////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 2 CODE HERE
-
-  //////////////////////////////// DO NOT MODIFY
-  check('mario-again', height); // DO NOT MODIFY
-  //////////////////////////////// DO NOT MODIFY
-}
+   // WRITE YOUR EXERCISE 2 CODE HERE
+   while (true){
+     height = prompt("Please enter a valid height");
+     height = Number(height);
+     if(height >= 1 && height <= 23 && Number.isInteger(height)){
+       break;
+     };
+   };
+   let i = 1;
+   let hash = '#';
+   let lines = "<code>";
+   let spacesB = height-2;
+   let spacesA = '&nbsp' + '&nbsp';
+   while (i <= height){
+     let a = '';
+     for(let j = 0; j <= spacesB; j++) {
+       a += '&nbsp;';
+     }
+     spacesB--;
+     hash = hash + '#';
+     lines = lines + a + hash + spacesA + hash + "</br>";
+     i++;
+   }
+   document.getElementById("mario-hard-output").innerHTML = lines;
+   lines = lines + "</code>"
+   //////////////////////////////// DO NOT MODIFY
+   check('mario-again', height); // DO NOT MODIFY
+   //////////////////////////////// DO NOT MODIFY
+ }
 
 /*
  * Credit. 10 points.
@@ -128,6 +165,7 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
 
+  // WRITE YOUR EXERCISE 3 CODE HERE
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
@@ -166,22 +204,7 @@ function credit() {
 
 function guess() {
 
-  var div = document.getElementById("guess-output");
-  var number = Math.floor(Math.abs(Math.random()) * 1000);
-  var guess = prompt("Guess the number between 1 and 1000.");
-  let guessTotal;
-  while (true) {
-    if (guess == number) {
-      guessTotal = guessTotal + 1
-      div.InnerHTML = `You're correct! You guessed the number in ${guessTotal} tries.`;
-      break;
-    }
-    else {
-      guessTotal = guessTotal + 1;
-      div.innerHTML = `You're incorrect. Guess again.`;
-      var guess = prompt("Guess the number between 1 and 1000.");
-    }
-  }
+  // WRITE YOUR EXERCISE 4 CODE HERE
 
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
@@ -217,35 +240,6 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
-/*
-  var div = document.getElementById("hurricane-output")
-  do {
-    windspeed = prompt("Enter a hurricane windspeed.")
-  } while (windspeed<0);
-  if (windspeed>=157)
-  {
-    div.innerHTML = "Category 5";
-  }
-  else if (windspeed>130 && windspeed<157)
-  {
-    div.innerHTML = "Category 4";
-  }
-  else if (windspeed>111 && windspeed<130)
-  {
-    div.innerHTML = "Category 3";
-  }
-  else if (windspeed>96 && windspeed<111)
-  {
-    div.innerHTML = "Category 2";
-  }
-  else if (windspeed>74 && windspeed<96)
-  {
-    div.innerHTML = "Category 1";
-  }
-  else if (windspeed>34 && windspeed<74)
-  {
-    div.innerHTML = "Tropical Storm";
-  };
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
@@ -273,17 +267,9 @@ function hurricane() {
 function gymnastics() {
 
   /////////////////// DO NOT MODIFY
-  let total = 0; //// DO NOT MODIFY
-  let scores = []; // DO NOT MODIFY
+  let total  =  0; //// DO NOT MODIFY
+  let scores  =  []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
-/*
-  var div = document.getElementById("gymastics-output")
-  let a = prompt("Enter a gymnastics score.")
-  let b = prompt("Enter a gymnastics score.")
-  let c = prompt("Enter a gymnastics score.")
-  let d = prompt("Enter a gymnastics score.")
-  let e = prompt("Enter a gymnastics score.")
-  let f = prompt("Enter a gymnastics score.")
 
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
@@ -327,16 +313,10 @@ function gymnastics() {
 function reportCard() {
 
   ///////////////////////// DO NOT MODIFY
-  let testTotal = 0; ////// DO NOT MODIFY
-  let quizTotal = 0; ////// DO NOT MODIFY
-  let homeworkTotal = 0; // DO NOT MODIFY
+  let testTotal  =  0; ////// DO NOT MODIFY
+  let quizTotal  =  0; ////// DO NOT MODIFY
+  let homeworkTotal  =  0; // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
-/*
-  var div = document.getElementById("report-card-output")
-  if (quizTotal!=-1)
-  do {
-    quizTotal = quizTotal + prompt("Enter the marking period quiz scores.")
-  } while
 
   /*
    * NOTE: The 'testTotal', 'quizTotal', and 'homeworkTotal' variables
@@ -345,9 +325,9 @@ function reportCard() {
    */
 
   ///////////////////// DO NOT MODIFY
-  let tests = 0; ////// DO NOT MODIFY
-  let quizzes = 0; //// DO NOT MODIFY
-  let homeworks = 0; // DO NOT MODIFY
+  let tests  =  0; ////// DO NOT MODIFY
+  let quizzes  =  0; //// DO NOT MODIFY
+  let homeworks  =  0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
 
   /*
