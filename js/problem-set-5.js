@@ -31,7 +31,7 @@
 
    // WRITE YOUR EXERCISE 1 CODE HERE
    while (true){
-     height = prompt("Please enter a valid height");
+     height = prompt("Please enter a height for the Mario-styled pyramid.");
      height = Number(height);
      if(height >= 1 && height <= 23 && Number.isInteger(height)){
        break;
@@ -91,7 +91,7 @@
 
    // WRITE YOUR EXERCISE 2 CODE HERE
    while (true){
-     height = prompt("Please enter a valid height");
+     height = prompt("Please enter a height for the Mario-styled pyramid.");
      height = Number(height);
      if(height >= 1 && height <= 23 && Number.isInteger(height)){
        break;
@@ -169,7 +169,7 @@
     let odd_sum = 0;
     let even_sum = 0;
     while (true){
-      card = prompt("Enter your credit card number: ");
+      card = prompt("Enter the front digits on your parent's credit card number.");
       if ((card.length == 16 || card.length == 15 || card.length == 13) && Number.isInteger(Number(card))){
         break;
       }
@@ -276,6 +276,29 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+
+  windspeed = Number(prompt("Enter a windspeed of the hurricane."))
+  if (windspeed >= 157) {
+      document.getElementById("hurricane-output").innerHTML = 'Category 5 Hurricane.';
+    }
+    else if (windspeed>=130){
+      document.getElementById('hurricane-output').innerHTML='Category 4 Hurricane.';
+    }
+    else if (windspeed>=111){
+      document.getElementById('hurricane-output').innerHTML='Category 3 Hurricane.';
+    }
+    else if (windspeed>=96){
+      document.getElementById('hurricane-output').innerHTML='Category 2 Hurricane.';
+    }
+    else if (windspeed>=74){
+      document.getElementById('hurricane-output').innerHTML='Category 1 Hurricane.';
+    }
+    else if (windspeed>=39){
+      document.getElementById('hurricane-output').innerHTML='Tropical Storm.';
+    }
+    else if (windspeed<=38){
+      document.getElementById('hurricane-output').innerHTML='The skies are calm...';
+    };
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
