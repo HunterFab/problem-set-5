@@ -26,37 +26,29 @@
    let height; // DO NOT MODIFY
    ////////////// DO NOT MODIFY
 
-
-
-
-   // WRITE YOUR EXERCISE 1 CODE HERE
-   while (true) {
-     height = prompt("Please enter a height for the Mario-styled pyramid.");
+   while (true){
+     height = prompt("Please enter a valid height");
      height = Number(height);
-     if(height >= 1 && height <= 23 && Number.isInteger(height)) {
+     if(height >= 1 && height <= 23 && Number.isInteger(height)){
        break;
-       /* Prompt */
-
      };
    };
-
    let i = 1;
    let hash = '#';
-   let lines = "<x>";
+   let lines = "<code>";
    let spaces = height-2;
-
-   while (i <= height) {
+    while (i <= height){
      let a = '';
      for(let j = 0; j <= spaces; j++) {
-       a += '&nbsp';
-      }
-        spaces--;
-        hash = hash + '#';
-        lines = lines + a + hash + "</br>";
-        i++;
+       a += '&nbsp;';
+     }
+     spaces--;
+     hash = hash + '#';
+     lines = lines + a + hash + "</br>";
+     i++;
    }
    document.getElementById("mario-easy-output").innerHTML = lines;
-    lines = lines + "</code>"
+   lines = lines + "</code>"
    //document.GetById("mario-easy").innerHTML();
    ////////////////////////// DO NOT MODIFY
    check('mario', height); // DO NOT MODIFY
@@ -93,37 +85,34 @@
    ////////////// DO NOT MODIFY
 
    // WRITE YOUR EXERCISE 2 CODE HERE
-   while (true) {
-     height = prompt("Please enter a height for the Mario-styled pyramid.");
-     height = Number(height);
-     if(height >= 1 && height <= 23 && Number.isInteger(height)) {
-       break;
-       /* Prompt */
-
-     };
-   };
-
-   let i = 1;
-   let hash = '#';
-   let lines = "<x>";
-   let spacesB = height-2;
-   let spacesA = '&nbsp' + '&nbsp';
-   while (i <= height) {
-     let a = '';
-     for(let j = 0; j <= spacesB; j++) {
-       a += '&nbsp';
-     }
-     spacesB--;
-     hash = hash + '#';
-     lines = lines + a + hash + spacesA + hash + "</br>";
-     i++;
-   }
-   document.getElementById("mario-hard-output").innerHTML = lines;
-   lines = lines + "</code>"
-   //////////////////////////////// DO NOT MODIFY
-   check('mario-again', height); // DO NOT MODIFY
-   //////////////////////////////// DO NOT MODIFY
- }
+   while (true){
+      height = prompt("Please enter a valid height");
+      height = Number(height);
+      if(height >= 1 && height <= 23 && Number.isInteger(height)){
+        break;
+      };
+    };
+    let i = 1;
+    let hash = '#';
+    let lines = "<code>";
+    let spacesB = height-2;
+    let spacesA = '&nbsp' + '&nbsp';
+    while (i <= height){
+      let a = '';
+      for(let j = 0; j <= spacesB; j++) {
+        a += '&nbsp;';
+      }
+      spacesB--;
+      hash = hash + '#';
+      lines = lines + a + hash + spacesA + hash + "</br>";
+      i++;
+    }
+    document.getElementById("mario-hard-output").innerHTML = lines;
+    lines = lines + "</code>"
+    //////////////////////////////// DO NOT MODIFY
+    check('mario-again', height); // DO NOT MODIFY
+    //////////////////////////////// DO NOT MODIFY
+  }
 
 /*
  * Credit. 10 points.
